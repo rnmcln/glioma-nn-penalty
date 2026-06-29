@@ -53,10 +53,17 @@ def nn_vs_transparent(tag, y, preds, models):
     pb = paired_bootstrap(y, preds[best_tf], preds[best], "auroc")
     pm_nn = point_metrics(y, preds[best_tf])
     pm_ref = point_metrics(y, preds[best])
-    rule = meaningful_improvement(pb["delta"], pm_nn["brier"], pm_ref["brier"], pm_nn["calibration_slope"])
+    # Report the AUROC difference as the difference of the displayed point
+    # estimates (rounded to 3 dp), so the delta is internally consistent with the
+    # two AUROC columns. The confidence interval and p-value remain those of the
+    # paired bootstrap. The combined-criterion margin uses this same point delta.
+    a_nn = round(pm_nn["auroc"], 3)
+    a_ref = round(pm_ref["auroc"], 3)
+    delta_pt = round(a_nn - a_ref, 3)
+    rule = meaningful_improvement(delta_pt, pm_nn["brier"], pm_ref["brier"], pm_nn["calibration_slope"])
     return {"setting": tag, "best_tf_variant": best_tf, "best_transparent": best,
-            "auroc_nn": round(pm_nn["auroc"], 3), "auroc_transparent": round(pm_ref["auroc"], 3),
-            "delta_auroc": round(pb["delta"], 3), "delta_lo": round(pb["lo"], 3),
+            "auroc_nn": a_nn, "auroc_transparent": a_ref,
+            "delta_auroc": delta_pt, "delta_lo": round(pb["lo"], 3),
             "delta_hi": round(pb["hi"], 3), "paired_p": round(pb["p_value"], 3),
             "brier_nn": round(pm_nn["brier"], 3), "brier_transparent": round(pm_ref["brier"], 3),
             "calib_slope_nn": round(pm_nn["calibration_slope"], 3),

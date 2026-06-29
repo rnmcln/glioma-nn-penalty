@@ -31,7 +31,6 @@ def row_ci(df, setting, model):
 
 def main():
     set_global_seed()
-    plotting.figure_study_design(); log.info("fig1")
 
     # Fig 2: forest across cohorts
     rows = []
@@ -43,7 +42,7 @@ def main():
             ci = row_ci(df, setting, m)
             if ci:
                 rows.append({"cohort": coh, "model": m, **ci})
-    plotting.figure_forest_cohorts(rows); log.info("fig2")
+    plotting.figure_forest_cohorts(rows); log.info("fig1")
 
     # Fig 3: strata
     srows = []
@@ -56,12 +55,12 @@ def main():
             ci = row_ci(t3, setting, m)
             if ci:
                 srows.append({"stratum": st, "model": m, **ci})
-    plotting.figure_strata(srows); log.info("fig3")
+    plotting.figure_strata(srows); log.info("fig2")
 
     # Fig 4: calibration + DCA in Gravendeel
     yg, pg, mg = load_predictions("external_tcga_to_gravendeel_B_clinical_molecular_os_2y")
     pa_g = {m: point_metrics(yg, pg[m])["auroc"] for m in mg}
-    plotting.figure_calib_dca(yg, pg, pa_g, "Gravendeel (external)", stem="figure4_calibration_dca"); log.info("fig4")
+    plotting.figure_calib_dca(yg, pg, pa_g, "Gravendeel (external)", stem="figure3_calibration_dca"); log.info("fig3")
 
     # Supplement: internal stacked + all-model calib/DCA
     yi, pi, mi = load_predictions("internal_tcga_B_clinical_molecular_os_2y")

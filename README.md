@@ -73,7 +73,7 @@ python scripts/06_sensitivity_analyses.py
 # 7. Metrics, bootstrap CIs, paired NN-vs-transparent comparison, DCA -> tables
 python scripts/07_make_tables.py
 
-# 8. Figures 1-4 + supplementary figures (PNG + PDF)
+# 8. Figures (PNG/PDF/SVG) + supplementary figures
 python scripts/08_make_figures.py
 
 # 9. Secondary time-to-event benchmark (Cox / penalised Cox)
@@ -103,10 +103,9 @@ resumable internal-CV driver `scripts/run_internal_full.py` (covering all 13
 internal settings, including the IDH-wildtype, IDH-mutant, glioblastoma, and
 landmark analyses) and then the external, survival, sensitivity, table, and figure
 steps. Scripts 03 and 06 are lightweight single-setting entry points subsumed by
-the driver and are not required for a full run. Main figures are
-the monochrome design flow, an AUROC forest across internal and external
+the driver and are not required for a full run. The three main figures are an AUROC forest across internal and external
 validation, the within-stratum discrimination figure, and calibration plus
-decision curves in Gravendeel; 600-dpi TIFF and vector PDF are written for
+decision curves in Gravendeel; 600-dpi TIFF, vector PDF and SVG are written for
 submission. The manuscript is formatted for Neuro-Oncology Advances.
 
 For the full internal CV across all settings with checkpointing/resume, use the
@@ -128,7 +127,7 @@ Archival reproducibility: pin the GlioVis source to a commit by editing
 - `tables/table3_internal_performance.csv`, `table4_external_performance.csv`
 - `tables/table5_nn_vs_transparent.csv` (prespecified decision rule applied)
 - `tables/table6_decision_curve.csv`, `tables/supplement_model_details.csv`
-- `figures/figure1..4.{png,pdf}`
+- `figures/figure1_performance_forest`, `figure2_strata`, `figure3_calibration_dca` (`.png`/`.pdf`/`.svg`)
 - `results/predictions/*.csv` (out-of-fold and external probabilities)
 
 ## Known limitations (see PROTOCOL.md and manuscript)

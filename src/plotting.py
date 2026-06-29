@@ -98,49 +98,96 @@ def _save(fig, stem, tiff=False):
 # Figure 1 — study-design workflow (four aligned boxes, restrained palette)
 # ---------------------------------------------------------------------------
 def figure_study_design(stem="figure1_study_design"):
-    fig, ax = plt.subplots(figsize=(10.0, 3.0))
+    fig, ax = plt.subplots(figsize=(10.4, 6.4))
     ax.axis("off"); ax.grid(False)
     ax.set_xlim(0, 1); ax.set_ylim(0, 1)
+    LH = 0.0285          # body line height (axis fraction)
 
-    panels = [
-        ("Data", ["TCGA LGG/GBM (n = 667)", "External validation:",
-                  "Gravendeel (n = 264)", "REMBRANDT (n = 342)"]),
-        ("Endpoint", ["2-year overall survival", "1- and 5-year",
-                      "sensitivity analyses"]),
-        ("Models", ["Transparent models", "Standard ML",
-                    "Multilayer perceptrons", "FT-Transformer (sensitivity)"]),
-        ("Evaluation", ["AUROC and AUPRC", "Brier score and calibration",
-                        "Decision curves", "Paired-bootstrap criterion"]),
-    ]
-    w, h = 0.224, 0.66
-    gap = (0.98 - 4 * w) / 3
-    y0 = 0.16
-    centers = []
-    for i, (title, lines) in enumerate(panels):
-        x = 0.01 + i * (w + gap)
-        centers.append((x, x + w))
-        ax.add_patch(FancyBboxPatch((x, y0), w, h,
-                     boxstyle="round,pad=0.006,rounding_size=0.018",
+    def box(x, y, w, h, title, lines):
+        ax.add_patch(FancyBboxPatch((x, y), w, h,
+                     boxstyle="round,pad=0.004,rounding_size=0.012",
                      linewidth=1.0, edgecolor="#c4ccd6", facecolor="#f5f7fa"))
-        # accent header rule
-        ax.plot([x + 0.022, x + w - 0.022], [y0 + h - 0.085, y0 + h - 0.085],
-                color=C_ACCENT, lw=1.6, solid_capstyle="round")
-        ax.text(x + w / 2, y0 + h - 0.045, title, ha="center", va="center",
-                fontsize=11, fontweight="bold", color=C_ACCENT)
-        # evenly distribute body lines in the area below the header
-        top = y0 + h - 0.135
-        bot = y0 + 0.065
-        n = len(lines)
-        ys = np.linspace(top, bot, n) if n > 1 else [(top + bot) / 2]
-        for ty, ln in zip(ys, lines):
-            ax.text(x + w / 2, ty, ln, ha="center", va="center",
-                    fontsize=8.6, color=C_TEXT)
-    # subtle arrows between boxes
-    ymid = y0 + h / 2
-    for (l, r), (l2, _) in zip(centers[:-1], centers[1:]):
-        ax.annotate("", xy=(l2 - 0.004, ymid), xytext=(r + 0.004, ymid),
-                    arrowprops=dict(arrowstyle="-|>", lw=1.4, color=C_ACCENT,
-                                    shrinkA=0, shrinkB=0))
+        tx = x + 0.016
+        ax.text(tx, y + h - 0.028, title, ha="left", va="top",
+                fontsize=10.5, fontweight="bold", color=C_ACCENT)
+        ax.plot([tx, x + w - 0.016], [y + h - 0.052, y + h - 0.052],
+                color=C_ACCENT, lw=1.4, solid_capstyle="round")
+        ty = y + h - 0.078
+        for ln, sub in lines:
+            ax.text(tx + (0.018 if sub else 0), ty, ln, ha="left", va="top",
+                    fontsize=8.0 if sub else 8.4,
+                    color="#555555" if sub else C_TEXT)
+            ty -= LH
+
+    L = lambda s: (s, False)   # primary line
+    S = lambda s: (s, True)    # indented sub-line
+
+    # ---- top row: study-design components ----
+    yt, ht = 0.545, 0.405
+    w1 = (0.98 - 3 * 0.0167) / 4
+    xs1 = [0.01 + i * (w1 + 0.0167) for i in range(4)]
+    box(xs1[0], yt, w1, ht, "Cohorts (role)",
+        [L("Development:"), S("TCGA LGG/GBM, n = 667"),
+         L("External validation:"), S("Gravendeel, n = 264 (main)"),
+         S("REMBRANDT, n = 342"), S("(stress test)")])
+    box(xs1[1], yt, w1, ht, "Feature sets",
+        [L("A  Clinical:"), S("age, sex, grade, histology"),
+         L("B  + Molecular:"), S("IDH, 1p/19q, MGMT*"),
+         L("C  Expression (exploratory):"), S("40-gene panel; no imaging")])
+    box(xs1[2], yt, w1, ht, "Prediction target",
+        [L("Primary:"), S("2-year overall survival"),
+         L("Sensitivity: 1- and 5-year"),
+         L("Robustness:"), S("IPCW, 6-month landmark,"), S("Cox / penalised Cox")])
+    box(xs1[3], yt, w1, ht, "Model families",
+        [L("Transparent:"), S("base rate, age+grade LR,"), S("penalised LR"),
+         L("Standard ML:"), S("random forest, gradient boosting"),
+         L("Neural nets:"), S("compact, medium, regularised MLP"),
+         L("Sensitivity: FT-Transformer")])
+
+    # ---- bottom row: analysis pipeline ----
+    yb, hb = 0.045, 0.385
+    w2 = (0.98 - 2 * 0.0167) / 3
+    xs2 = [0.01 + i * (w2 + 0.0167) for i in range(3)]
+    box(xs2[0], yb, w2, hb, "Validation",
+        [L("Internal:"), S("repeated stratified CV in TCGA,"),
+         S("shared folds, out-of-fold probs"),
+         L("External:"), S("train on full TCGA; test in"),
+         S("Gravendeel and REMBRANDT"),
+         S("(REMBRANDT: limited harmonisation)")])
+    box(xs2[1], yb, w2, hb, "Evaluation domains",
+        [L("Discrimination:"), S("AUROC, AUPRC"),
+         L("Calibration:"), S("Brier, intercept, slope"),
+         L("Clinical utility:"), S("decision-curve net benefit"),
+         L("Comparison:"), S("paired bootstrap (2000)")])
+    box(xs2[2], yb, w2, hb, "Prespecified criterion",
+        [L("Clinically meaningful, calibrated"), L("improvement (all required):"),
+         S("•  ΔAUROC ≥ 0.03"),
+         S("•  no worse Brier score"),
+         S("•  calibration slope 0.8–1.25")])
+
+    # arrows: light horizontal flow within each row
+    def harrow(x1, x2, y):
+        ax.annotate("", xy=(x2, y), xytext=(x1, y),
+                    arrowprops=dict(arrowstyle="-|>", lw=1.3, color=C_ACCENT, shrinkA=0, shrinkB=0))
+    yc1 = yt + ht / 2
+    for i in range(3):
+        harrow(xs1[i] + w1 + 0.001, xs1[i + 1] - 0.001, yc1)
+    yc2 = yb + hb / 2
+    for i in range(2):
+        harrow(xs2[i] + w2 + 0.001, xs2[i + 1] - 0.001, yc2)
+    # routed connector from Models (top-right) down into Validation (bottom-left)
+    mx = xs1[3] + w1 / 2
+    vx = xs2[0] + w2 / 2
+    ymid = (yt + (yb + hb)) / 2
+    ax.plot([mx, mx], [yt, ymid], color=C_ACCENT, lw=1.3, solid_capstyle="round")
+    ax.plot([mx, vx], [ymid, ymid], color=C_ACCENT, lw=1.3, solid_capstyle="round")
+    ax.annotate("", xy=(vx, yb + hb), xytext=(vx, ymid),
+                arrowprops=dict(arrowstyle="-|>", lw=1.3, color=C_ACCENT, shrinkA=0, shrinkB=0))
+
+    ax.text(0.01, 0.985, "Study design and analytical workflow",
+            ha="left", va="top", fontsize=11.5, fontweight="bold", color=C_TEXT)
+    ax.text(xs1[1] + w1 - 0.016, yt - 0.012, "* where harmonisable",
+            ha="right", va="top", fontsize=6.8, color="#888888")
     _save(fig, stem, tiff=True)
 
 

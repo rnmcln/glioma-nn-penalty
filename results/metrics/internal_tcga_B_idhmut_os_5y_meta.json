@@ -1,0 +1,34 @@
+{
+  "setting": "internal_tcga_B_idhmut_os_5y",
+  "features": [
+    "age",
+    "sex",
+    "grade",
+    "histology",
+    "idh_status",
+    "codel_1p19q",
+    "mgmt_status"
+  ],
+  "n": 110,
+  "endpoint_info": {
+    "horizon_months": 60,
+    "n_input": 428,
+    "n_missing_time_or_status": 0,
+    "n_censored_before_horizon_excluded": 318,
+    "n_labelled": 110,
+    "n_events_death": 49,
+    "n_nonevents_alive": 61,
+    "event_rate": 0.44545454545454544
+  },
+  "models": [
+    "base_rate",
+    "logistic_age_grade",
+    "penalised_logistic",
+    "random_forest",
+    "hist_gboost",
+    "tf_compact",
+    "tf_medium",
+    "tf_regularised"
+  ],
+  "cv": "3x5"
+}

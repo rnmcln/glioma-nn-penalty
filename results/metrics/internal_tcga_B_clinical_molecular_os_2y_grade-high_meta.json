@@ -1,0 +1,34 @@
+{
+  "setting": "internal_tcga_B_clinical_molecular_os_2y_grade-high",
+  "features": [
+    "age",
+    "sex",
+    "grade",
+    "histology",
+    "idh_status",
+    "codel_1p19q",
+    "mgmt_status"
+  ],
+  "n": 258,
+  "endpoint_info": {
+    "horizon_months": 24,
+    "n_input": 393,
+    "n_missing_time_or_status": 0,
+    "n_censored_before_horizon_excluded": 135,
+    "n_labelled": 258,
+    "n_events_death": 138,
+    "n_nonevents_alive": 120,
+    "event_rate": 0.5348837209302325
+  },
+  "models": [
+    "base_rate",
+    "logistic_age_grade",
+    "penalised_logistic",
+    "random_forest",
+    "hist_gboost",
+    "tf_compact",
+    "tf_medium",
+    "tf_regularised"
+  ],
+  "cv": "3x5"
+}

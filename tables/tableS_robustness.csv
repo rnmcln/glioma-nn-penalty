@@ -1,0 +1,6 @@
+check,target,scheme,auroc,model,standard_per_fold_auroc,fast_pipeline_auroc,difference
+expr_scaling,gravendeel,per_cohort_z,0.811,,,,
+expr_scaling,gravendeel,train_fit_scaler,0.801,,,,
+expr_scaling,rembrandt,per_cohort_z,0.738,,,,
+expr_scaling,rembrandt,train_fit_scaler,0.753,,,,
+encoding_concordance,,,,penalised_logistic,0.917,0.916,0.001

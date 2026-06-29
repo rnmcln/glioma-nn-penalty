@@ -1,0 +1,19 @@
+no,group,setting,n,event_rate
+1,Internal,"TCGA internal — clinical (A), 2-year",406,0.38
+2,Internal,"TCGA internal — clinical+molecular (B), 2-year (primary)",406,0.38
+3,Internal,"TCGA internal — expression panel (C), 2-year",406,0.38
+4,Internal,"TCGA internal — set B, 1-year",539,0.16
+5,Internal,"TCGA internal — set B, 5-year",276,0.76
+6,Internal,"TCGA internal — set B, grade III–IV, 2-year",258,0.54
+7,Internal,"TCGA internal — set B, grade I–II, 2-year",118,0.06
+8,Internal,"TCGA internal — set B, complete-case, 2-year",329,0.36
+9,Stratum,"TCGA internal — IDH-wildtype, 2-year",173,0.79
+10,Stratum,"TCGA internal — IDH-wildtype, 1-year",195,0.40
+11,Stratum,"TCGA internal — IDH-mutant, 5-year",110,0.45
+12,Stratum,"TCGA internal — glioblastoma, 1-year",128,0.46
+13,Internal,"TCGA internal — 6-month landmark, 2-year",359,0.30
+14,External,"TCGA → Gravendeel — clinical (A), 2-year",260,0.64
+15,External,"TCGA → Gravendeel — clinical+molecular (B), 2-year",260,0.64
+16,External,"TCGA → Gravendeel — expression panel (C), 2-year",260,0.64
+17,External,"TCGA → REMBRANDT — grade + histology, 2-year",341,0.59
+18,External,"TCGA → REMBRANDT — expression panel (C), 2-year",341,0.59

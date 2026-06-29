@@ -1,0 +1,4 @@
+model,auroc_mean,auroc_sd,slope_mean,slope_sd,brier_mean,brier_sd
+hist_gboost,0.9,0.004,0.73,0.019,0.115,0.001
+penalised_logistic,0.915,0.004,0.967,0.022,0.106,0.002
+tf_regularised,0.911,0.002,1.036,0.042,0.107,0.001

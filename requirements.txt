@@ -1,0 +1,16 @@
+# Core scientific stack (pinned major versions; see environment.yml for a conda route)
+numpy>=1.26,<2.1
+pandas>=2.0
+scipy>=1.11
+scikit-learn>=1.4
+statsmodels>=0.14
+lifelines>=0.30
+matplotlib>=3.8
+requests>=2.31
+openpyxl>=3.1
+rdata>=0.11               # reads GlioVis .Rds in pure Python (no R required)
+# Neural network
+tensorflow==2.17.1        # CPU build is sufficient; GPU not required
+# Optional (gracefully handled if absent)
+# xgboost>=2.0
+# scikit-survival>=0.22

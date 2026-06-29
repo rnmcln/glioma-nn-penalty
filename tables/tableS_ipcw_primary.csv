@@ -1,0 +1,9 @@
+model,ipcw_auroc,ipcw_brier
+base_rate,0.486,0.237
+logistic_age_grade,0.896,0.123
+penalised_logistic,0.916,0.106
+random_forest,0.907,0.11
+hist_gboost,0.907,0.11
+tf_compact,0.911,0.108
+tf_medium,0.905,0.118
+tf_regularised,0.913,0.108

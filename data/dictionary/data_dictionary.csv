@@ -1,0 +1,14 @@
+variable,description,availability
+cohort,Source cohort: tcga | rembrandt | gravendeel,derived
+sample,Sample identifier (GlioVis),available
+age,Age at diagnosis (years),"available (TCGA, Gravendeel); missing (REMBRANDT)"
+sex,Sex (Male/Female),"available (TCGA, Gravendeel); missing (REMBRANDT)"
+grade,WHO grade I-IV (ordinal 1-4),available; partly missing (REMBRANDT)
+grade_group,high (III-IV) vs lower (I-II),derived
+gbm,Grade IV / GBM indicator,derived
+histology,Harmonised histology (GBM/Astrocytoma/Oligodendroglioma/Mixed-OA),available
+idh_status,IDH mutation status (Mutant/WT),available (TCGA); partial (Gravendeel); missing (REMBRANDT)
+codel_1p19q,1p/19q codeletion (Codeleted/Non-codeleted),available (TCGA); derived/partial (Gravendeel); missing (REMBRANDT)
+mgmt_status,MGMT promoter methylation,"available (TCGA); missing (REMBRANDT, Gravendeel)"
+os_months,Overall survival time (months),available
+os_event,"Vital status (1=death, 0=alive/censored)",available

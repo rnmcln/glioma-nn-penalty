@@ -1,0 +1,4 @@
+cohort,n,median_age,pct_female,pct_GBM,pct_grade_IV,pct_IDH_mut,median_OS_months,n_2yr_labelled,n_2yr_deaths,event_rate_2yr,n_censored_excluded_2yr
+gravendeel,264,51.6,33.0,58.7,58.7,30.3,14.4,260,167,0.642,4
+rembrandt,342,,,52.9,31.0,,18.3,341,202,0.592,1
+tcga,667,47.0,38.1,22.8,22.3,64.2,17.9,406,156,0.384,261

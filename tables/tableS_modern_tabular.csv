@@ -1,0 +1,10 @@
+setting,model,auroc,brier,calib_slope
+internal_B_2y,penalised_logistic,0.917,0.105,0.971
+internal_B_2y,tf_regularised,0.913,0.107,1.055
+internal_B_2y,ft_transformer,0.891,0.124,1.018
+external_gravendeel_B_2y,penalised_logistic,0.822,0.196,0.824
+external_gravendeel_B_2y,tf_regularised,0.826,0.168,0.667
+external_gravendeel_B_2y,ft_transformer,0.812,0.179,0.756
+external_rembrandt_B_2y,penalised_logistic,0.68,0.264,0.421
+external_rembrandt_B_2y,tf_regularised,0.68,0.227,0.466
+external_rembrandt_B_2y,ft_transformer,0.617,0.266,0.374

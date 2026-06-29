@@ -1,0 +1,41 @@
+{
+  "setting": "external_tcga_to_gravendeel_A_clinical_os_2y",
+  "shared_features": [
+    "age",
+    "sex",
+    "grade",
+    "histology"
+  ],
+  "n_train": 406,
+  "n_test": 260,
+  "train_info": {
+    "horizon_months": 24,
+    "n_input": 667,
+    "n_missing_time_or_status": 0,
+    "n_censored_before_horizon_excluded": 261,
+    "n_labelled": 406,
+    "n_events_death": 156,
+    "n_nonevents_alive": 250,
+    "event_rate": 0.3842364532019704
+  },
+  "test_info": {
+    "horizon_months": 24,
+    "n_input": 264,
+    "n_missing_time_or_status": 0,
+    "n_censored_before_horizon_excluded": 4,
+    "n_labelled": 260,
+    "n_events_death": 167,
+    "n_nonevents_alive": 93,
+    "event_rate": 0.6423076923076924
+  },
+  "models": [
+    "base_rate",
+    "logistic_age_grade",
+    "penalised_logistic",
+    "random_forest",
+    "hist_gboost",
+    "tf_compact",
+    "tf_medium",
+    "tf_regularised"
+  ]
+}

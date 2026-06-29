@@ -1,0 +1,33 @@
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+*.swp
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+env/
+
+# --- Large, re-downloadable raw data (regenerate with scripts/01_download_data.py) ---
+data/raw/
+
+# --- Processed binary stubs (small CSVs are kept) ---
+data/processed/*.parquet
+
+# --- Heavy / regenerated artefacts ---
+results/model_objects/
+results/logs/
+results/predictions/_ckpt/
+results/metrics/_tabcache/
+figures/*.tif
+
+# --- Manuscript and submission documents ---
+# The repository ships the analysis code, the locked protocol, results tables/
+# figures, and a plain results summary (RESULTS_SUMMARY.md). The manuscript and
+# its build scripts are maintained separately and are not committed here.
+manuscript/
+
+# --- Scratch ---
+*.log

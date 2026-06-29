@@ -1,0 +1,13 @@
+analysis,feature_set,model,cindex,cindex_sd,target,shared_features
+internal_cv,A_clinical,cox,0.839,0.02,TCGA,
+internal_cv,A_clinical,cox_penalised,0.837,0.02,TCGA,
+external,A_clinical,cox,0.61,,rembrandt,grade;histology
+external,A_clinical,cox_penalised,0.61,,rembrandt,grade;histology
+external,A_clinical,cox,0.72,,gravendeel,age;sex;grade;histology
+external,A_clinical,cox_penalised,0.717,,gravendeel,age;sex;grade;histology
+internal_cv,B_clinical_molecular,cox,0.851,0.023,TCGA,
+internal_cv,B_clinical_molecular,cox_penalised,0.853,0.021,TCGA,
+external,B_clinical_molecular,cox,0.61,,rembrandt,grade;histology
+external,B_clinical_molecular,cox_penalised,0.61,,rembrandt,grade;histology
+external,B_clinical_molecular,cox,0.695,,gravendeel,age;sex;grade;histology;idh_status;codel_1p19q
+external,B_clinical_molecular,cox_penalised,0.689,,gravendeel,age;sex;grade;histology;idh_status;codel_1p19q

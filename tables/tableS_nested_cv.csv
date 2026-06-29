@@ -1,0 +1,2 @@
+model,nested_cv_auroc,fixed_hyperparam_auroc,difference
+penalised_logistic_nested,0.917,0.915,0.002

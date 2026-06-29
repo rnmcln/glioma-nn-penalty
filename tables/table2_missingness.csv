@@ -1,0 +1,8 @@
+variable,gravendeel,rembrandt,tcga
+age,0.0,1.0,0.087
+codel_1p19q,0.504,1.0,0.009
+grade,0.0,0.281,0.072
+histology,0.0,0.0,0.0
+idh_status,0.197,1.0,0.01
+mgmt_status,1.0,1.0,0.046
+sex,0.0,1.0,0.087

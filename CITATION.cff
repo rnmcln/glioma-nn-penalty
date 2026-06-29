@@ -1,0 +1,55 @@
+cff-version: 1.2.0
+message: "If you use this software or its results, please cite as below."
+title: "glioma-nn-penalty: a reproducible TCGA-REMBRANDT benchmark of transparent versus neural-network models for glioma survival prediction"
+version: 0.3.3
+date-released: "2026-06-29"
+authors:
+  - family-names: "Lawson McLean"
+    given-names: "Aaron"
+    orcid: "https://orcid.org/0000-0001-5528-6905"
+    affiliation: "Department of Neurosurgery, Jena University Hospital, Friedrich Schiller University Jena, Jena, Germany"
+  - family-names: "Neumeister"
+    given-names: "Anne"
+    affiliation: "Department of Neurosurgery, Jena University Hospital, Friedrich Schiller University Jena, Jena, Germany"
+  - family-names: "Meier"
+    given-names: "Tom"
+    affiliation: "Department of Neurosurgery, Jena University Hospital, Friedrich Schiller University Jena, Jena, Germany"
+  - family-names: "Kahr"
+    given-names: "Julian"
+    affiliation: "Department of Neurosurgery, Jena University Hospital, Friedrich Schiller University Jena, Jena, Germany"
+  - family-names: "Senft"
+    given-names: "Christian"
+    affiliation: "Department of Neurosurgery, Jena University Hospital, Friedrich Schiller University Jena, Jena, Germany"
+keywords:
+  - glioma
+  - survival prediction
+  - clinical prediction models
+  - benchmarking
+  - neural networks
+  - calibration
+  - external validation
+  - TCGA
+  - REMBRANDT
+  - Gravendeel
+license: MIT
+references:
+  - type: article
+    authors:
+      - family-names: Christodoulou
+        given-names: Evangelia
+      - family-names: Van Calster
+        given-names: Ben
+    title: "A systematic review shows no performance benefit of machine learning over logistic regression for clinical prediction models"
+    journal: "Journal of Clinical Epidemiology"
+    year: 2019
+    doi: 10.1016/j.jclinepi.2019.02.004
+  - type: article
+    authors:
+      - family-names: Bowman
+        given-names: Robert L
+      - family-names: Squatrito
+        given-names: Massimo
+    title: "GlioVis data portal for visualization and analysis of brain tumor expression datasets"
+    journal: "Neuro-Oncology"
+    year: 2017
+    doi: 10.1093/neuonc/now247

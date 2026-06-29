@@ -1,0 +1,4 @@
+cohort,age,sex,grade,histology,idh_status,codel_1p19q,mgmt_status,expression_panel
+tcga,available,available,available,available,available,available,available,available
+gravendeel,available,available,available,available,available,partial,absent,available
+rembrandt,absent,absent,available,available,absent,absent,absent,available

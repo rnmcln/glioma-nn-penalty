@@ -1,0 +1,10 @@
+variant,architecture,feature_set,n_input_features_after_encoding,l2,optimizer,learning_rate,loss,batch_size,max_epochs,early_stopping_patience,epochs_trained,class_weighted,seed
+tf_compact,Dense32 - Dropout0.2 - Dense16 - Dropout0.2 - sigmoid,A_clinical,8,0.0,Adam,0.001,binary_crossentropy,64,200,20,48,True,20260628
+tf_medium,Dense128 - BN - Dropout0.3 - Dense64 - Dropout0.3 - Dense32 - Dropout0.3 - sigmoid (L2 1e-4),A_clinical,8,0.0001,Adam,0.001,binary_crossentropy,64,200,20,86,True,20260628
+tf_regularised,Dense64 - Dropout0.4 - Dense32 - Dropout0.4 - sigmoid (L2 1e-3),A_clinical,8,0.001,Adam,0.001,binary_crossentropy,64,200,20,78,True,20260628
+tf_compact,Dense32 - Dropout0.2 - Dense16 - Dropout0.2 - sigmoid,B_clinical_molecular,14,0.0,Adam,0.001,binary_crossentropy,64,200,20,77,True,20260628
+tf_medium,Dense128 - BN - Dropout0.3 - Dense64 - Dropout0.3 - Dense32 - Dropout0.3 - sigmoid (L2 1e-4),B_clinical_molecular,14,0.0001,Adam,0.001,binary_crossentropy,64,200,20,100,True,20260628
+tf_regularised,Dense64 - Dropout0.4 - Dense32 - Dropout0.4 - sigmoid (L2 1e-3),B_clinical_molecular,14,0.001,Adam,0.001,binary_crossentropy,64,200,20,118,True,20260628
+tf_compact,Dense32 - Dropout0.2 - Dense16 - Dropout0.2 - sigmoid,C_expression,40,0.0,Adam,0.001,binary_crossentropy,64,200,20,74,True,20260628
+tf_medium,Dense128 - BN - Dropout0.3 - Dense64 - Dropout0.3 - Dense32 - Dropout0.3 - sigmoid (L2 1e-4),C_expression,40,0.0001,Adam,0.001,binary_crossentropy,64,200,20,71,True,20260628
+tf_regularised,Dense64 - Dropout0.4 - Dense32 - Dropout0.4 - sigmoid (L2 1e-3),C_expression,40,0.001,Adam,0.001,binary_crossentropy,64,200,20,130,True,20260628

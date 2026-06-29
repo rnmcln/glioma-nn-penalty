@@ -1,0 +1,39 @@
+{
+  "setting": "external_tcga_to_rembrandt_A_clinical_os_2y",
+  "shared_features": [
+    "grade",
+    "histology"
+  ],
+  "n_train": 406,
+  "n_test": 341,
+  "train_info": {
+    "horizon_months": 24,
+    "n_input": 667,
+    "n_missing_time_or_status": 0,
+    "n_censored_before_horizon_excluded": 261,
+    "n_labelled": 406,
+    "n_events_death": 156,
+    "n_nonevents_alive": 250,
+    "event_rate": 0.3842364532019704
+  },
+  "test_info": {
+    "horizon_months": 24,
+    "n_input": 342,
+    "n_missing_time_or_status": 0,
+    "n_censored_before_horizon_excluded": 1,
+    "n_labelled": 341,
+    "n_events_death": 202,
+    "n_nonevents_alive": 139,
+    "event_rate": 0.592375366568915
+  },
+  "models": [
+    "base_rate",
+    "logistic_age_grade",
+    "penalised_logistic",
+    "random_forest",
+    "hist_gboost",
+    "tf_compact",
+    "tf_medium",
+    "tf_regularised"
+  ]
+}

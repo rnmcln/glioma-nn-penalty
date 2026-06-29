@@ -1,0 +1,3 @@
+group,n,median_age,pct_GBM,pct_grade_IV,pct_IDH_mut,pct_codel,pct_MGMT_meth,median_OS_months
+included_2yr,406,49.0,30.0,29.8,56.2,20.9,66.5,29.8
+censored_before_24mo,261,43.0,11.5,10.7,76.6,32.2,79.3,12.2

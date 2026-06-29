@@ -1,0 +1,31 @@
+{
+  "gliovis_repo": "msquatrito/shiny_GlioVis",
+  "gliovis_commit_pinned": "eae2ce7852ba",
+  "gliovis_commit_latest_master": "eae2ce7852baf0536460fe1080b1ef395c853e59",
+  "files": {
+    "GSE108476_clinical_raw.csv": {
+      "sha256": "17350978dc018a0f207d49b8bc0c735ed6419b7c1180b8565c321058cbb013fc",
+      "bytes": 2591817
+    },
+    "GSE16011_clinical_raw.csv": {
+      "sha256": "c93385e5b759c7d5e8f4d470f41b8290cb546a5d72b0fc60e367161c5b096c1c",
+      "bytes": 333703
+    },
+    "Gravendeel.Rds": {
+      "sha256": "ab628882c85ae97f77486954e8b7c0ef7e84f03e96ef5e0e08eae21fd85db478",
+      "bytes": 18023104
+    },
+    "Rembrandt.Rds": {
+      "sha256": "a438d551f87ae8662cd5cf5f4c340c49fb91db5049b2496c010774456ea53719",
+      "bytes": 35939290
+    },
+    "TCGA_GBMLGG.Rds": {
+      "sha256": "b951d2b77bf9a238a54d6d57d72f04f1438435b06b9407aaed3720f729148faa",
+      "bytes": 91012780
+    },
+    "tcga_lgggbm_clinical_raw.csv": {
+      "sha256": "e143aeef4b24b0fc91942fe8b12b21a22a13427bf7573bc7d0e3f7c29f0b54e4",
+      "bytes": 417265
+    }
+  }
+}

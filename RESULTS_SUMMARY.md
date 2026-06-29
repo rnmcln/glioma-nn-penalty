@@ -39,7 +39,7 @@ class superior (overlapping CIs):
 | IDH-mutant, 5y | 110 | 0.45 | 0.692 | 0.647 |
 | Glioblastoma, 1y | 128 | 0.46 | 0.609 | 0.607 |
 
-So pooled discrimination largely reflects recovery of molecular class.
+So pooled discrimination is consistent with substantial recovery of molecular and histological class.
 
 ## Modern tabular baseline and robustness
 
@@ -75,6 +75,7 @@ binary analysis.
 
 ## Interpretation
 
-No prespecified neural network added clinically meaningful, calibrated, or
-externally valid value over transparent models. Penalised logistic regression was
+No prespecified neural network met a prespecified combined criterion for
+calibrated improvement over interpretable regression baselines (some were
+numerically higher on AUROC but failed on calibration). Penalised logistic regression was
 at least as discriminating and better calibrated; net benefit was comparable.
